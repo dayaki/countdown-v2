@@ -1,14 +1,17 @@
 import firebase from "firebase/app";
 import "firebase/database";
 
+const API_KEY = process.env.REACT_APP_API_KEY;
+const APP_ID = process.env.REACT_APP_APP_ID;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCIL3wflXSg5DD6keVzzNX47nTzOcOMV2A",
+  apiKey: API_KEY,
   authDomain: "rog-timer.firebaseapp.com",
   databaseURL: "https://rog-timer.firebaseio.com",
   projectId: "rog-timer",
   storageBucket: "rog-timer.appspot.com",
   messagingSenderId: "49873760483",
-  appId: "1:49873760483:web:d11309f0f95ee78ab795d6",
+  appId: APP_ID,
 };
 
 // Initialize Firebase
