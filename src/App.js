@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Display from "./Display";
+import Scheduler from "./Scheduler";
+import firebase from "./firebase";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [timerData, setTimerData] = useState("");
+
+  useEffect(() => {
+    const todoRef = firebase.database().ref("countdown");
+    todoRef.on("value", (snapshot) => {
+      let data = {};
+      snapshot.forEach(function (childSnapshot) {
+        var childData = childSnapshot.val();
+        data = childData;
+      });
+
+      if (data.timer) {
+        setTimerData(data);
+      }
+    });
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Display
+            minister={timerData.minister}
+            session={timerData.session}
+            date={timerData.timer * 60000}
+          />
+        </Route>
+        <Route path="/scheduler">
+          <Scheduler data={timerData} />
+        </Route>
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;
