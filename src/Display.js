@@ -1,10 +1,9 @@
-// import CurrentTime from "./CurrentTime";
+import { Container, Row, Col } from "reactstrap";
 import Timer from "./Timer";
 
 const Display = ({ session, minister, date }) => {
   return (
     <div className="timer">
-      {/* <CurrentTime /> */}
       <div className="session">
         {session && minister && (
           <h3>

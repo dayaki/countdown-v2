@@ -9,7 +9,6 @@
   width: 100%;
   height: 100vh;
   max-height: 100%;
-
   background-image: radial-gradient(
       circle at 90% 24%,
       rgba(209, 209, 209, 0.04) 0%,
@@ -247,5 +246,23 @@
     font-size: 7rem;
     font-weight: bold;
     margin: 0;
+  }
+}
+
+/* query for Saumsung 40inch */
+@media all and (min-width: 960px) {
+  .timer {
+  }
+  .timer .countdown h1 {
+    font-size: 20rem;
+    margin-top: -3rem;
+  }
+  .timer .session h3 {
+    /* font-size: 4rem;
+    line-height: 6rem; */
+  }
+  .timer p.is-done {
+    font-size: 15rem;
+    text-align: center;
   }
 }
