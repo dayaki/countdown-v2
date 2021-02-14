@@ -45,6 +45,15 @@ function Scheduler({ data }) {
                   <option defaultValue="Praise">Praise</option>
                   <option defaultValue="Choir">Choir Ministration</option>
                   <option defaultValue="Giving">Giving</option>
+                  <option defaultValue="General ThanksGiving">
+                    General ThanksGiving
+                  </option>
+                  <option defaultValue="Child Dedication">
+                    Child Dedication
+                  </option>
+                  <option defaultValue="Special Ministration">
+                    Special Ministration
+                  </option>
                   <option defaultValue="Worship">Worship</option>
                   <option defaultValue="Sermon">Sermon</option>
                   <option defaultValue="Closing">Closing Announcement</option>

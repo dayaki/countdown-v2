@@ -8,14 +8,14 @@ import "./App.css";
 const App = () => {
   const [timerData, setTimerData] = useState("");
 
-  useEffect(() => {
-    const mediaQueryList = window.matchMedia("(min-width: 960px)");
-    if (mediaQueryList.matches) {
-      alert("YES");
-    } else {
-      alert("No");
-    }
-  }, []);
+  // useEffect(() => {
+  //   const mediaQueryList = window.matchMedia("(min-width: 960px)");
+  //   if (mediaQueryList.matches) {
+  //     alert("YES");
+  //   } else {
+  //     alert("No");
+  //   }
+  // }, []);
 
   useEffect(() => {
     const todoRef = firebase.database().ref("countdown");
